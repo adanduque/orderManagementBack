@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="springboot-servicio-usuarios" />
+        <module name="micro-serv-eureka" />
+        <module name="springboot-servicio-oauth" />
+        <module name="micro-serv-security" />
+        <module name="springboot-servicio-usuarios-commons" />
+        <module name="micro-serv-products" />
+        <module name="micro-serv-config" />
+        <module name="micro-serv-orders" />
+        <module name="springboot-servicio-gateway-server" />
+        <module name="micro-serv-customers" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="micro-serv-gateway" target="17" />
+      <module name="micro-serv-link" target="17" />
+      <module name="micro-serv-oauth" target="17" />
+      <module name="micro-serv-oders" target="17" />
+      <module name="micro-serv-sns" target="17" />
+      <module name="micro-serv-users" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="micro-serv-config" options="-parameters" />
+      <module name="micro-serv-customers" options="-parameters" />
+      <module name="micro-serv-eureka" options="-parameters" />
+      <module name="micro-serv-gateway" options="-parameters" />
+      <module name="micro-serv-link" options="-parameters" />
+      <module name="micro-serv-oauth" options="-parameters" />
+      <module name="micro-serv-oders" options="-parameters" />
+      <module name="micro-serv-orders" options="-parameters" />
+      <module name="micro-serv-products" options="-parameters" />
+      <module name="micro-serv-security" options="-parameters" />
+      <module name="micro-serv-sns" options="-parameters" />
+      <module name="micro-serv-users" options="-parameters" />
+      <module name="springboot-servicio-gateway-server" options="-parameters" />
+      <module name="springboot-servicio-oauth" options="-parameters" />
+      <module name="springboot-servicio-usuarios" options="-parameters" />
+      <module name="springboot-servicio-usuarios-commons" options="-parameters" />
+    </option>
+  </component>
+</project>

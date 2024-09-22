@@ -1,0 +1,34 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: servicio-oauth
+        uri: lb://servicio-oauth
+        predicates:
+          - Path=/api/security/**
+        filters:
+          - StripPrefix=2
+      - id: servicio-usuarios
+        uri: lb://servicio-usuarios
+        predicates:
+          - Path=/api/usuarios/**
+        filters:
+          - StripPrefix=2
+      - id: micro-serv-orders
+        uri: lb://micro-serv-orders
+        predicates:
+          - Path=/api/v1/orders/**
+        filters:
+          - StripPrefix=2
+      - id: micro-serv-products
+        uri: lb://micro-serv-products
+        predicates:
+          - Path=/api/v1/products/**
+        filters:
+          - StripPrefix=2
+      - id: micro-serv-customers
+        uri: lb://micro-serv-customers
+        predicates:
+          - Path=/api/v1/customers/**
+        filters:
+          - StripPrefix=2

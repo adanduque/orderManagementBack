@@ -1,0 +1,44 @@
+server:
+    port: 8087
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/productDb
+    username: postgres
+    password: admin
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "prometheus"
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      customerServiceCircuitBreaker:
+        slidingWindowType: COUNT_BASED
+        slidingWindowSize: 10
+        permittedNumberOfCallsInHalfOpenState: 5
+        waitDurationInOpenState: 10000ms
+        failureRateThreshold: 50
+        minimumNumberOfCalls: 10
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+  timelimiter:
+    instances:
+      customerServiceTimeLimiter:
+        timeoutDuration: 5000ms
+        cancelRunningFuture: true
